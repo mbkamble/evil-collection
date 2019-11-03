@@ -69,13 +69,11 @@
     "=" 'dired-diff
     ;; Tree Dired commands
     (kbd "M-C-?") 'dired-unmark-all-files
-    (kbd "M-C-d") 'dired-tree-down
-    (kbd "M-C-u") 'dired-tree-up
-    (kbd "M-C-n") 'dired-next-subdir
-    (kbd "M-C-p") 'dired-prev-subdir
+    "gl" 'dired-tree-down      ;; instead of (kbd "M-C-d")
+    "gh" 'dired-tree-up        ;; instead of (kbd "M-C-u")
+    "gj" 'dired-next-subdir    ;; instead of (kbd "M-C-n")
+    "gk" 'dired-prev-subdir    ;; instead of (kbd "M-C-p")
     ;; move to marked files
-    (kbd "M-{") 'dired-prev-marked-file
-    (kbd "M-}") 'dired-next-marked-file
     ;; Make all regexp commands share a `%' prefix:
     ;; We used to get to the submap via a symbol dired-regexp-prefix,
     ;; but that seems to serve little purpose, and copy-keymap
@@ -111,6 +109,8 @@
     (kbd "* <delete>") 'dired-unmark-backward
     (kbd "* C-n") 'dired-next-marked-file
     (kbd "* C-p") 'dired-prev-marked-file
+    "*k" 'dired-prev-marked-file   ;; instead of (kbd "M-{")
+    "*j" 'dired-next-marked-file   ;; instead of (kbd "M-}")
     "*t" 'dired-toggle-marks
     ;; Lower keys for commands not operating on all the marked files
     "a" 'dired-find-alternate-file
@@ -140,8 +140,6 @@
     ;; sort
     "o" 'dired-sort-toggle-or-edit
     ;; moving
-    "gj" 'dired-next-dirline
-    "gk" 'dired-prev-dirline
     "[[" 'dired-prev-dirline
     "]]" 'dired-next-dirline
     "<" 'dired-prev-dirline
