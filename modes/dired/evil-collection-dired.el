@@ -111,6 +111,7 @@
     (kbd "* C-p") 'dired-prev-marked-file
     "*k" 'dired-prev-marked-file   ;; instead of (kbd "M-{")
     "*j" 'dired-next-marked-file   ;; instead of (kbd "M-}")
+    "*n" 'dired-narrow
     "*t" 'dired-toggle-marks
     ;; Lower keys for commands not operating on all the marked files
     "a" 'dired-find-alternate-file

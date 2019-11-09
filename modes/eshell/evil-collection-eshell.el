@@ -94,7 +94,10 @@
 (defun evil-collection-eshell-setup ()
   "Set up `evil' bindings for `eshell'."
   (add-hook 'eshell-mode-hook 'evil-collection-eshell-next-prompt-on-insert)
-  (add-hook 'eshell-first-time-mode-hook 'evil-collection-eshell-setup-keys))
+  (add-hook 'eshell-first-time-mode-hook
+            (lambda ()
+              (evil-collection-eshell-setup-keys)
+              (load-file (expand-file-name "eshell_funcs" eshell-directory-name)) )))
 
 (provide 'evil-collection-eshell)
 ;;; evil-collection-eshell.el ends here
